@@ -1,0 +1,211 @@
+@import "tailwindcss";
+@import "@heroui/styles";
+
+/*
+ * HeroUI Pro Theme
+ * Add this to your globals.css after importing @heroui/styles
+ * Only includes variables customized from the selected theme
+ * @see https://heroui.com/docs/react/getting-started/theming
+ */
+:root,
+.light,
+.default,
+[data-theme="light"],
+[data-theme="default"],
+.dark,
+[data-theme="dark"] {
+  /* Border Radius */
+  --radius: 0.25rem;
+  --field-radius: 0.5rem;
+
+  /* Border Width */
+  --border-width-field: 1px;
+  --field-border-width: 1px;
+
+  /* Spacing */
+  --spacing: 0.265625rem;
+
+  /* Font */
+  --font-sans: "Roboto", sans-serif;
+  --font-heading: "GeistSans", sans-serif;
+}
+
+:root,
+.light,
+.default,
+[data-theme="light"],
+[data-theme="default"] {
+  /* Theme Colors */
+  --background: oklch(97.02% 0.0060 193.33);
+  --muted: oklch(55.17% 0.0120 193.33);
+  --scrollbar: oklch(87.10% 0.0060 193.33);
+  --surface-secondary: oklch(95.24% 0.0090 193.33);
+  --surface-tertiary: oklch(93.73% 0.0090 193.33);
+  --default: oklch(94.00% 0.0060 193.33);
+  --accent: oklch(67.33% 0.1153 193.33);
+  --accent-foreground: oklch(100.00% 0.0001 263.28);
+  --success: oklch(73.29% 0.1958 143.55);
+  --warning: oklch(78.19% 0.1604 65.07);
+  --danger: oklch(65.32% 0.2356 18.48);
+  --field-border: oklch(90.00% 0.0060 193.33);
+  --border: oklch(90.00% 0.0060 193.33);
+  --separator: oklch(92.00% 0.0060 193.33);
+  --focus: oklch(67.33% 0.1153 193.33);
+  --accent-soft: color-mix(in oklab, oklch(67.33% 0.1153 193.33) 15%, transparent);
+  --accent-hover: color-mix(in oklab, oklch(67.33% 0.1153 193.33) 90%, oklch(15% 0.0231 193.33) 10%);
+}
+
+.dark,
+[data-theme="dark"] {
+  color-scheme: dark;
+  /* Theme Colors */
+  --background: oklch(12.00% 0.0060 193.33);
+  --muted: oklch(70.50% 0.0120 193.33);
+  --scrollbar: oklch(70.50% 0.0060 193.33);
+  --surface: oklch(21.03% 0.0120 193.33);
+  --surface-secondary: oklch(25.70% 0.0090 193.33);
+  --surface-tertiary: oklch(27.21% 0.0090 193.33);
+  --overlay: oklch(21.03% 0.0120 193.33);
+  --default: oklch(27.40% 0.0060 193.33);
+  --accent: oklch(67.33% 0.1153 193.33);
+  --accent-foreground: oklch(100.00% 0.0001 263.28);
+  --success: oklch(73.29% 0.1958 143.55);
+  --warning: oklch(82.03% 0.1405 69.08);
+  --danger: oklch(59.40% 0.1991 17.37);
+  --field-background: oklch(21.03% 0.0120 193.33);
+  --field-border: oklch(28.00% 0.0060 193.33);
+  --segment: oklch(39.64% 0.0060 193.33);
+  --border: oklch(28.00% 0.0060 193.33);
+  --separator: oklch(25.00% 0.0060 193.33);
+  --focus: oklch(67.33% 0.1153 193.33);
+  --accent-soft: color-mix(in oklab, oklch(67.33% 0.1153 193.33) 15%, transparent);
+  --accent-hover: color-mix(in oklab, oklch(67.33% 0.1153 193.33) 90%, oklch(15% 0.0231 193.33) 10%);
+}
+
+@layer base {
+  :where(h1, h2, h3, h4, h5, h6, [role="heading"]) {
+    font-family: var(--font-heading, var(--font-sans, sans-serif));
+  }
+}
+
+/* Component overrides */
+@layer components {
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+  src: url("https://fonts.gstatic.com/s/roboto/v51/KFOMCnqEu92Fr1ME7kSn66aGLdTylUAMQXC89YmC2DPNWubEbGmTggvWl0Qn.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+  src: url("https://fonts.gstatic.com/s/roboto/v51/KFOMCnqEu92Fr1ME7kSn66aGLdTylUAMQXC89YmC2DPNWuZEbWmTggvWl0Qn.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("https://fonts.gstatic.com/s/roboto/v51/KFOMCnqEu92Fr1ME7kSn66aGLdTylUAMQXC89YmC2DPNWuaabWmTggvWl0Qn.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("https://fonts.gstatic.com/s/roboto/v51/KFOMCnqEu92Fr1ME7kSn66aGLdTylUAMQXC89YmC2DPNWubEbWmTggvWl0Qn.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("https://fonts.gstatic.com/s/roboto/v51/KFOMCnqEu92Fr1ME7kSn66aGLdTylUAMQXC89YmC2DPNWub2bWmTggvWl0Qn.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "GeistSans";
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+  src: url("https://api.heroui.pro/api/style-library/font-proxy?u=https%3A%2F%2Fmedia.brand.dev%2Ffonts%2Fe24cec106619c03f0b3519e31b9bc55e0d5e926b6a95b8d798cd8cef215b1505.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "GeistSans";
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+  src: url("https://api.heroui.pro/api/style-library/font-proxy?u=https%3A%2F%2Fmedia.brand.dev%2Ffonts%2Fe24cec106619c03f0b3519e31b9bc55e0d5e926b6a95b8d798cd8cef215b1505.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "GeistSans";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("https://api.heroui.pro/api/style-library/font-proxy?u=https%3A%2F%2Fmedia.brand.dev%2Ffonts%2Fe24cec106619c03f0b3519e31b9bc55e0d5e926b6a95b8d798cd8cef215b1505.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "GeistSans";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("https://api.heroui.pro/api/style-library/font-proxy?u=https%3A%2F%2Fmedia.brand.dev%2Ffonts%2Fe24cec106619c03f0b3519e31b9bc55e0d5e926b6a95b8d798cd8cef215b1505.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "GeistSans";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("https://api.heroui.pro/api/style-library/font-proxy?u=https%3A%2F%2Fmedia.brand.dev%2Ffonts%2Fe24cec106619c03f0b3519e31b9bc55e0d5e926b6a95b8d798cd8cef215b1505.woff2") format("woff2");
+}
+
+[data-theme="light"],
+[data-theme="default"] {
+  --brand-btn-shadow: 0 12px 34px -10px rgba(20, 184, 180, 0.5);
+  --brand-btn-secondary-border: #cbe9e8;
+  --brand-btn-secondary-text: #0e9a96;
+}
+
+[data-theme="dark"] {
+  --brand-btn-shadow: 0 12px 34px -10px rgba(20, 184, 180, 0.25);
+  --brand-btn-secondary-border: rgba(20, 184, 180, 0.3);
+  --brand-btn-secondary-text: #14b8b4;
+}
+
+.button,
+.toggle-button {
+  font-weight: 700;
+}
+
+.button--primary {
+  box-shadow: var(--brand-btn-shadow);
+}
+
+.button--secondary {
+  border: 1px solid var(--brand-btn-secondary-border);
+  color: var(--brand-btn-secondary-text);
+}
+
+.card {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.06), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+}
+
+.input-group__prefix {
+  border-right: none;
+}
+
+.input-group__suffix {
+  border-left: none;
+}
+}
